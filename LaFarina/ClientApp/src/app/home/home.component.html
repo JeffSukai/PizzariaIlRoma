@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="top-banner">
+    <h2 class="food-cat">Pizza</h2>
+    <div class="dropdown food-order" >
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Order List
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" >
+        <li class="order-list" *ngFor="let order of orderList" (click)="RemovePizzaFromOrder(order.Name)">
+          <p>{{order.Name}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row ">
+
+    <div class="col-md-6"  *ngFor="let pizza of pizzaDetails">
+      <div class="card" (click)="AddPizzaToOrder(pizza.name)">
+        <div class="card-body">
+          <h5 class="card-title">{{pizza.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Tomato , Cheese, Pepperoni</h6>
+          <p class="card-text">&euro; {{pizza.price}}</p>
+          <img class="food-img" src="{{pizza.imgPath}}" alt="Alternate Text" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
