@@ -51,7 +51,7 @@ namespace LaFarina.Services
 
             _order = order;
            
-            _context.Orders.Add(_order);
+            _context.Orders.Update(_order);
             _context.SaveChanges();
         }
 
